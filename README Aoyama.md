@@ -1,4 +1,2 @@
-﻿テスト
-<h1>テスト2</h1>
-らりるれろ<br>
-なにぬねの
+<h1>MyNameIsKentoAoyama</h1>
+Yes！！<br>
