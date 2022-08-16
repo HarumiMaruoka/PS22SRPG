@@ -22,6 +22,17 @@
 エンジン　バージョン<br>
 Unity    2020.3.33f1<br>
 
+<table border="1" width="300">
+<tr>
+<th bgcolor="#FFFFFF"><font color="#FFFFFF">エンジン</font></th>
+<th bgcolor="#FFFFFF"><font color="#FFFFFF">バージョン</font></th>
+</tr>
+<tr>
+<th bgcolor="#FFFFFF"><font color="#FFFFFF">Unity</font></th>
+<th bgcolor="#FFFFFF"><font color="#FFFFFF">2020.3.33f1</font></th>
+</tr>
+</table>
+
 <h1> 導入済みアセット </h1>
 
 <h1> 制作人数 </h1>
