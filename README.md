@@ -1,7 +1,6 @@
 <h1> タイトル 未定 </h1>
 ターン性戦闘シュミレーション
 
-<br>
 <table border="1" width="300">
 <tr>
 <th bgcolor="#FFFFFF"><font color="#FFFFFF">エンジン</font></th>
