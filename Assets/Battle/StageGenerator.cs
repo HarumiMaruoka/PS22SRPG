@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 /// <summary>
-/// 配列を渡すとオブジェクトに変換してステージを作成する
+/// 配列を渡すとオブジェクトに変換してステージを作成するクラス
 /// </summary>
 public class StageGenerator : MonoBehaviour
 {
@@ -18,6 +17,10 @@ public class StageGenerator : MonoBehaviour
 
     // TODO:プレイヤーの設置など他でも使う場合は便利クラスを作りそっちに移す
     readonly (int x, int z) Offset = (5, 5);
+    // ステージ上の障害物を設置する高さ
+    readonly int ObstPosY = 1;
+    // そこには何も配置しないを示す文字
+    readonly char NonTile = '_';
 
     [Header("文字と対応するプレハブをセット")]
     [SerializeField] Tile[] _tiles;
@@ -48,19 +51,42 @@ public class StageGenerator : MonoBehaviour
     }
 
     /// <summary>配列からステージを生成する。ジャグ配列には対応していない</summary>
-    public void Generate(char[][] str)
+    public void Generate(char[][] array)
     {
-        for (int i = 0; i < str.Length; i++)
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int j = 0; j < str[0].Length; j++)
+            for (int j = 0; j < array[0].Length; j++)
             {
-                if (_dic.TryGetValue(str[i][j], out Tile tile))
+                if (array[i][j] == NonTile) continue;
+
+                if (_dic.TryGetValue(array[i][j], out Tile tile))
                 {
                     Instantiate(tile._obj, new Vector3(i + Offset.x, 0, j + Offset.z), Quaternion.identity, _parent);
                 }
                 else
                 {
-                    Debug.LogError("<color=red>文字に対応するタイルがありません: </color>" + str[i][j]);
+                    Debug.LogError("<color=red>文字に対応するタイルがありません: </color>" + array[i][j]);
+                }
+            }
+        }
+    }
+
+    /// <summary>配列からステージ上の障害物を生成する。ジャグ配列には対応していない</summary>
+    public void GenerateObst(char[][] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = 0; j < array[0].Length; j++)
+            {
+                if (array[i][j] == NonTile) continue;
+
+                if (_dic.TryGetValue(array[i][j], out Tile tile))
+                {
+                    Instantiate(tile._obj, new Vector3(i + Offset.x, ObstPosY, j + Offset.z), Quaternion.identity, _parent);
+                }
+                else
+                {
+                    Debug.LogError("<color=red>文字に対応するタイルがありません: </color>" + array[i][j]);
                 }
             }
         }

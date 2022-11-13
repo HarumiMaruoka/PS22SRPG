@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420901084}
   - component: {fileID: 420901085}
+  - component: {fileID: 420901086}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -253,10 +254,24 @@ MonoBehaviour:
   - _char: 103
     _obj: {fileID: 5049949086988920860, guid: 58dc2c31d13a9224d803b35765472890, type: 3}
   - _char: 119
-    _obj: {fileID: 0}
+    _obj: {fileID: 5049949086988920860, guid: a5d7bc69c2136a74c94bbf15bc178722, type: 3}
   - _char: 114
-    _obj: {fileID: 0}
+    _obj: {fileID: 5049949086988920860, guid: ebeefed4c9f4a75468405d03279a4d93, type: 3}
+  - _char: 116
+    _obj: {fileID: 4495016285370153397, guid: c755c533d2faf984c8bd47040dcce151, type: 3}
   _parent: {fileID: 1467093734}
+--- !u!114 &420901086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420901083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0701cbe563c471a4f83fe5bc5097e172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1467093733
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,3 +439,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stageGenerator: {fileID: 420901085}
+  _unitGenerator: {fileID: 0}
