@@ -9,14 +9,12 @@ public class StageGenerator : MonoBehaviour
 {
     // TODO:プレイヤーの設置など他でも使う場合は便利クラスを作りそっちに移す
     [System.Serializable]
-    public class Tile
+    public struct Tile
     {
         public char _char;
         public GameObject _obj;
     }
 
-    // TODO:プレイヤーの設置など他でも使う場合は便利クラスを作りそっちに移す
-    readonly (int x, int z) Offset = (5, 5);
     // ステージ上の障害物を設置する高さ
     readonly int ObstPosY = 1;
     // そこには何も配置しないを示す文字
@@ -61,7 +59,9 @@ public class StageGenerator : MonoBehaviour
 
                 if (_dic.TryGetValue(array[i][j], out Tile tile))
                 {
-                    Instantiate(tile._obj, new Vector3(i + Offset.x, 0, j + Offset.z), Quaternion.identity, _parent);
+                    int posX = i + BattleUtility.Offset.x;
+                    int posZ = j + BattleUtility.Offset.z;
+                    Instantiate(tile._obj, new Vector3(posX, 0, posZ), Quaternion.identity, _parent);
                 }
                 else
                 {
@@ -82,7 +82,9 @@ public class StageGenerator : MonoBehaviour
 
                 if (_dic.TryGetValue(array[i][j], out Tile tile))
                 {
-                    Instantiate(tile._obj, new Vector3(i + Offset.x, ObstPosY, j + Offset.z), Quaternion.identity, _parent);
+                    int posX = i + BattleUtility.Offset.x;
+                    int posZ = j + BattleUtility.Offset.z;
+                    Instantiate(tile._obj, new Vector3(posX, ObstPosY, posZ), Quaternion.identity, _parent);
                 }
                 else
                 {
