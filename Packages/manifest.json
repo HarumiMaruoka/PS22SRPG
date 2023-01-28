@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.cysharp.messagepipe": "1.7.4",
+    "jp.hadashikick.vcontainer": "1.12.0",
+    "com.cysharp.messagepipe.vcontainer": "1.7.4",
     "com.cysharp.unitask": "2.3.3",
     "com.neuecc.unirx": "7.1.0",
     "com.unity.collab-proxy": "1.15.15",
@@ -50,7 +53,9 @@
       "scopes": [
         "com.neuecc.unirx",
         "com.cysharp.unitask",
-        "com.cysharp.messagepipe.vcontainer"
+        "com.cysharp.messagepipe.vcontainer",
+        "jp.hadashikick.vcontainer",
+        "com.cysharp.messagepipe"
       ]
     }
   ]
