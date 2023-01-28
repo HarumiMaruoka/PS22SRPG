@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -12,7 +12,7 @@ public class CsvReader : MonoBehaviour
     public void Init() 
     {
         StringReader sr = new StringReader(_textAsset.text);
-        //Å‰‚Ìs‚ÍƒXƒLƒbƒv
+        //æœ€åˆã®è¡Œã¯ã‚¹ã‚­ãƒƒãƒ—
         sr.ReadLine();
 
         while (true)
