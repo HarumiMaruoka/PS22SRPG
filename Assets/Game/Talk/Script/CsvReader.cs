@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using VContainer;
+using VContainer.Unity;
 
 //[System.Serializable]
 public class CsvReader : MonoBehaviour
@@ -9,6 +11,7 @@ public class CsvReader : MonoBehaviour
     [SerializeField] TextAsset _textAsset;
     private List<TalkData> _talkDatas = new List<TalkData>();
 
+    //ToDo:会話の表示処理ができたら戻り値でTalkDataを返すようにする
     public void Init() 
     {
         StringReader sr = new StringReader(_textAsset.text);
